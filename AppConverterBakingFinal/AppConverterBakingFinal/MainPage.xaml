@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AppConverterBakingFinal"
+             x:Class="AppConverterBakingFinal.MainPage">
+
+    <StackLayout>
+        
+        <Label Text="Welcome Page" 
+           HorizontalOptions="CenterAndExpand"
+           VerticalOptions="CenterAndExpand" />
+        <Button x:Name="btnConvert" Text="Go to Conversion"
+            Margin="10, 5, 10, 0"
+                
+                Clicked="btnConvert_Clicked"/>
+
+
+
+
+    </StackLayout>
+
+</ContentPage>
