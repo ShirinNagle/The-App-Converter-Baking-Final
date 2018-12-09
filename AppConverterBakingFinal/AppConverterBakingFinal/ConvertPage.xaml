@@ -7,28 +7,86 @@
             <Label Text="Convert items here!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-            <StackLayout Orientation="Horizontal">
+            <StackLayout Orientation="Horizontal" Margin="20">
             <Entry x:Name="entryInputValue"
                    TextChanged="entryInputValue_TextChanged"
                    Placeholder="Enter oven temperature to convert here"
                    />
-            <Label x:Name="lblInputUnits" Text=""/>
+                
+                <Label x:Name="lblInputUnits" Text=""/>
             
             <Picker x:Name="pckConversions"
                     SelectedIndexChanged="pckConversions_SelectedIndexChanged"
                     BackgroundColor="Aquamarine"
-                    TextColor="Navy"/>
+                    TextColor="Navy"
+                    />
             <Label x:Name="lblOutputUnits" Text=""/>
+           </StackLayout>
+            <!--Flour conversion -->
+                <StackLayout Orientation="Horizontal" Margin="20">
+                <Entry x:Name="flourInputValue"
+                       TextChanged="flourInputValue_TextChanged"
+                       Placeholder="Enter flour quantity to convert here"/>
                 
+                <Label x:Name="fInputUnits" Text=""/>
+                
+                <Picker x:Name="pckConversionsF"
+                        SelectedIndexChanged="pckConversionsF_SelectedIndexChanged"
+                        BackgroundColor="PaleTurquoise"/>
+                
+                <Label x:Name="fOutputUnits" Text=""/>
+                </StackLayout>
+            <!--Butter Conversions-->
+            <StackLayout Orientation="Horizontal" Margin="20">
+                <Entry x:Name="butterInputValue"
+                       TextChanged="butterInputValue_TextChanged"
+                       Placeholder="Enter butter quantity to convert here"/>
+                <Label x:Name="bInputUnits" Text=""/>
+
+                <Picker x:Name="pckConversionsB"
+                        SelectedIndexChanged="pckConversionsB_SelectedIndexChanged"
+                        BackgroundColor="PaleGreen"/>
+                <Label x:Name="bOutputUnits" Text=""/>
+
             </StackLayout>
-            <StackLayout Orientation="Horizontal">
+            <!--Sugar Conversions-->
+            <StackLayout Orientation="Horizontal" Margin="20">
+                <Entry x:Name="sugarInputValue"
+                       TextChanged="sugarInputValue_TextChanged"
+                       Placeholder="Enter caster sugar amount here"/>
+                <Label x:Name="sInputUnits" Text=""/>
+
+                <Picker x:Name="pckConversionsS"
+                        SelectedIndexChanged="pckConversionsS_SelectedIndexChanged"
+                        BackgroundColor="LightPink"/>
+                <Label x:Name="sOutputUnits" Text=""/>
+
+            </StackLayout>
+            <!--Eggs-->
+            <StackLayout Orientation="Horizontal" Margin="20">
+                <Entry x:Name="eggInputValue"
+                       TextChanged="eggInputValue_TextChanged"
+                       Placeholder="Enter amount of eggs here"/>
+                <Label x:Name ="eInputUnits" Text=""/>
+
+                <Picker x:Name="pckConversionsE"
+                        SelectedIndexChanged="pckConversionsE_SelectedIndexChanged"
+                        BackgroundColor="LemonChiffon"/>
+                <Label x:Name="eOutputUnits" Text=""/>
+
+
+
+            </StackLayout>
+
+            
+            <StackLayout Orientation="Horizontal" Margin="20">
             <Button x:Name="btnMainPage"
                     Text="Go to main page"
-                    Margin="10, 5, 10, 0"
+                    Margin="20"
                     Clicked="btnMainPage_Clicked"/>
                 <Button x:Name="btnScaleUpOrDown"
                     Text="Go to Scale up or down page"
-                    Margin="10, 5, 10, 0"
+                    Margin="20"
                     Clicked="btnScaleUpOrDown_Clicked"/>
             </StackLayout>
                 

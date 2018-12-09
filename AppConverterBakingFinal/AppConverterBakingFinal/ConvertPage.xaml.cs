@@ -34,6 +34,9 @@ namespace AppConverterBakingFinal
         private void CreateListOfStuff()
         {
             pckConversions.ItemsSource = myConverter.ConversionTypes;
+            pckConversionsF.ItemsSource = myConverter.ConversionTypesF;
+            pckConversionsB.ItemsSource = myConverter.ConversionTypesB;
+            pckConversionsS.ItemsSource = myConverter.ConversionTypesS;
         }
 
         private void btnMainPage_Clicked(object sender, EventArgs e)
@@ -66,6 +69,77 @@ namespace AppConverterBakingFinal
         private void entryInputValue_TextChanged(object sender, TextChangedEventArgs e)
         {
             DoConversions();
+        }
+
+        private void flourInputValue_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            DoConversionsF();
+        }
+
+        private void pckConversionsF_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DoConversionsF();
+        }
+        private void DoConversionsF()
+        {
+            double answer;//local to this method
+            //call method from myConversionsClass to do  flour calculations
+            answer = myConverter.convertF(Convert.ToDouble(flourInputValue.Text), pckConversionsF.SelectedIndex);
+            //display the answer
+                    
+            fOutputUnits.Text = "is " + answer.ToString("0.00") + " " + myConverter.OutputUnitsF;
+            fInputUnits.Text = myConverter.InputUnitsF;
+        }//Do ConversionsF
+
+        private void butterInputValue_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            DoConversionsB();
+        }
+
+        private void pckConversionsB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DoConversionsB();
+        }
+        //butter conversion method
+        private void DoConversionsB()
+        {
+            double answer;//local to this butter conversion method
+            //call method from myConversions class to do butter calculations
+            answer = myConverter.convertB(Convert.ToDouble(butterInputValue.Text), pckConversionsB.SelectedIndex);
+            //display the answer
+            bOutputUnits.Text = "is " + answer.ToString("0.00") + " " + myConverter.OutputUnitsB;
+            bInputUnits.Text = myConverter.InputUnitsB;
+        }
+
+        private void sugarInputValue_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            DoConversionsS();
+        }
+        //caster sugar conversion method
+        private void DoConversionsS()
+        {
+            double answer;//local to this caster sugar conversion method
+            //call method from myConversions class to do butter calculations
+            answer = myConverter.convertS(Convert.ToDouble(sugarInputValue.Text), pckConversionsS.SelectedIndex);
+            //display the answer
+            sOutputUnits.Text = "is " + answer.ToString("0.00") + " " + myConverter.OutputUnitsS;
+            sInputUnits.Text = myConverter.InputUnitsS;
+
+        }
+
+        private void pckConversionsS_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DoConversionsS();
+        }
+
+        private void eggInputValue_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void pckConversionsE_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
