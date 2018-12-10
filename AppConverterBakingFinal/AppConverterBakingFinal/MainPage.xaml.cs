@@ -12,6 +12,8 @@ namespace AppConverterBakingFinal
         public MainPage()
         {
             InitializeComponent();
+            var assembly = typeof(MainPage);
+            imageMain.Source = ImageSource.FromResource("AppConverterBakingFinal.icons8-cupcake-100.png", assembly);
         }
 
         private void btnConvert_Clicked(object sender, EventArgs e)

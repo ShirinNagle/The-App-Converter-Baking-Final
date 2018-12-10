@@ -37,6 +37,7 @@ namespace AppConverterBakingFinal
             pckConversionsF.ItemsSource = myConverter.ConversionTypesF;
             pckConversionsB.ItemsSource = myConverter.ConversionTypesB;
             pckConversionsS.ItemsSource = myConverter.ConversionTypesS;
+            pckConversionsE.ItemsSource = myConverter.ConversionTypesE;
         }
 
         private void btnMainPage_Clicked(object sender, EventArgs e)
@@ -134,12 +135,22 @@ namespace AppConverterBakingFinal
 
         private void eggInputValue_TextChanged(object sender, TextChangedEventArgs e)
         {
+            DoConversionsE();
+        }
+             
+              
+
+        private void DoConversionsE()
+        {
+            double answer;
+            answer = myConverter.convertE(Convert.ToDouble(eggInputValue.Text), pckConversionsE.SelectedIndex);
+            eOutputUnits.Text = "is " + answer.ToString("0.00") + " " + myConverter.OutputUnitsE;
+            //selection for egg weights
 
         }
-
         private void pckConversionsE_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            DoConversionsE();
         }
     }
 }

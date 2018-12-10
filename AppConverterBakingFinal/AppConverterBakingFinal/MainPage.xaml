@@ -10,12 +10,16 @@
            HorizontalOptions="CenterAndExpand"
            VerticalOptions="CenterAndExpand" />
         <Button x:Name="btnConvert" Text="Go to Conversion"
-            Margin="10, 5, 10, 0"
-                
+            Margin="40"        
                 Clicked="btnConvert_Clicked"/>
 
+        <!--<Button x:Name="image">
+            <Image Source="icons8-cupcake-100.png">
+            </Image>
+            
+        </Button>-->
 
-
+        <Image x:Name="imageMain" Source="icons8-cupcake-100.png" Margin="20"/>
 
     </StackLayout>
 

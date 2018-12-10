@@ -14,6 +14,8 @@ namespace AppConverterBakingFinal
         public string OutputUnitsB { get; set; }
         public string InputUnitsS { get; set; }
         public string OutputUnitsS { get; set; }
+        public string InputUnitsE { get; set; }
+        public string OutputUnitsE { get; set; }
         //properties
         public string[] ConversionTypes = { "Celcius - Fahrenheit",
                                             "Fahrenheit - Celcius"};
@@ -25,6 +27,11 @@ namespace AppConverterBakingFinal
         public string[] ConversionTypesS = {"Cups - Grams",
                                                 "Grams - Cups",
                                                     "Cups - Oz's"};
+
+        public string[] ConversionTypesE = {"Medium - Large",
+                                                "Large - Medium",
+                                                "Medium eggs weigh",
+                                                "Large eggs weigh"};
         //methods
         //method to convert oven temp
         public double convert(double inputV, int cType)
@@ -117,6 +124,38 @@ namespace AppConverterBakingFinal
                     InputUnitsS = "Cups";
                     OutputUnitsS = "Oz'zs";
                     break;
+
+            }
+            return answer;
+        }//ConvertS
+        //method for converting eggs
+        public double convertE(double inputV, int cType)
+        {
+            double answer = 0;
+            //switch to choose egg conversion
+            switch (cType)
+            {
+                case 0://med - large
+                    answer = (inputV * .833);
+                    InputUnitsE = "Medium";
+                    OutputUnitsE = "Large";
+                    break;
+                case 1:// large - medium
+                    answer = (inputV / .833);
+                    InputUnitsS = "Large";
+                    OutputUnitsS = "Medium";
+                    break;
+                case 2:// Medium egg weighs
+                    answer = (inputV * 50);
+                    InputUnitsS = "Medium";
+                    OutputUnitsS = "Grams";
+                    break;
+                case 3:// large egg weighs
+                    answer = (inputV * 60);
+                    InputUnitsS = "Large";
+                    OutputUnitsS = "Grams";
+                    break;
+
 
             }
             return answer;

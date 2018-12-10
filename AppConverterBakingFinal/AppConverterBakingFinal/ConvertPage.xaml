@@ -13,14 +13,16 @@
                    Placeholder="Enter oven temperature to convert here"
                    />
                 
-                <Label x:Name="lblInputUnits" Text=""/>
+                <Label x:Name="lblInputUnits" Text=""
+                       />
             
             <Picker x:Name="pckConversions"
                     SelectedIndexChanged="pckConversions_SelectedIndexChanged"
                     BackgroundColor="Aquamarine"
                     TextColor="Navy"
                     />
-            <Label x:Name="lblOutputUnits" Text=""/>
+                <Label x:Name="lblOutputUnits" Text=""/>
+                <!--<BindingContext="{x:Reference Name=ovenConv}"-->
            </StackLayout>
             <!--Flour conversion -->
                 <StackLayout Orientation="Horizontal" Margin="20">
@@ -64,6 +66,7 @@
             </StackLayout>
             <!--Eggs-->
             <StackLayout Orientation="Horizontal" Margin="20">
+
                 <Entry x:Name="eggInputValue"
                        TextChanged="eggInputValue_TextChanged"
                        Placeholder="Enter amount of eggs here"/>
@@ -77,6 +80,11 @@
 
 
             </StackLayout>
+            <!--Trying to bind property here
+            <StackLayout>
+                <Label BindingContext="{x:Reference ovenConv}"
+                    x:Name="ovenConv" Text="{Binding Value, StringFormat=' Oven Temperature Conversion:' }"/>
+            </StackLayout>-->
 
             
             <StackLayout Orientation="Horizontal" Margin="20">
