@@ -12,13 +12,19 @@ namespace AppConverterBakingFinal
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ConvertPage : ContentPage
 	{
+        //global list to store the cake conversions
+        List<Cakes> cakes;
         myConversionsClass myConverter;//Global level object
+       //instantiate objects from classes
+        dataBindingClass dataBound = new dataBindingClass();
 		public ConvertPage ()//constructor
 		{
 			InitializeComponent ();
             //create list of Items here
             InitialiseProper();
-            CreateListOfStuff();
+            CreateListOfConversions();
+            //for data binding converted amt to display elsewhere on the page
+            this.BindingContext = dataBound;
 		}
 
         
@@ -31,7 +37,7 @@ namespace AppConverterBakingFinal
             }
         }
 
-        private void CreateListOfStuff()
+        private void CreateListOfConversions()
         {
             pckConversions.ItemsSource = myConverter.ConversionTypes;
             pckConversionsF.ItemsSource = myConverter.ConversionTypesF;
@@ -55,6 +61,7 @@ namespace AppConverterBakingFinal
         private void pckConversions_SelectedIndexChanged(object sender, EventArgs e)
         {
             DoConversions();
+            //dataBound.OvenConv = AnswerValue;
         }
 
         private void DoConversions()
@@ -65,6 +72,8 @@ namespace AppConverterBakingFinal
             //display the answer
             lblOutputUnits.Text = "is " + answer.ToString("0.00") + " " + myConverter.OutputUnits;
             lblInputUnits.Text = myConverter.InputUnits;
+            
+            
         }
 
         private void entryInputValue_TextChanged(object sender, TextChangedEventArgs e)
@@ -153,4 +162,6 @@ namespace AppConverterBakingFinal
             DoConversionsE();
         }
     }
+
+    
 }

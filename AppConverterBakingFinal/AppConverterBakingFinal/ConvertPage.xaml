@@ -4,9 +4,13 @@
              x:Class="AppConverterBakingFinal.ConvertPage">
     <ContentPage.Content>
         <StackLayout>
+            
+            <StackLayout>
             <Label Text="Convert items here!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+            
             <StackLayout Orientation="Horizontal" Margin="20">
             <Entry x:Name="entryInputValue"
                    TextChanged="entryInputValue_TextChanged"
@@ -21,9 +25,9 @@
                     BackgroundColor="Aquamarine"
                     TextColor="Navy"
                     />
-                <Label x:Name="lblOutputUnits" Text=""/>
-                <!--<BindingContext="{x:Reference Name=ovenConv}"-->
-           </StackLayout>
+                <Label x:Name="lblOutputUnits" Text="{Binding Path=OvenConv, Mode=OneTime}"/>
+            </StackLayout>
+            
             <!--Flour conversion -->
                 <StackLayout Orientation="Horizontal" Margin="20">
                 <Entry x:Name="flourInputValue"
@@ -38,6 +42,7 @@
                 
                 <Label x:Name="fOutputUnits" Text=""/>
                 </StackLayout>
+            
             <!--Butter Conversions-->
             <StackLayout Orientation="Horizontal" Margin="20">
                 <Entry x:Name="butterInputValue"
@@ -49,8 +54,8 @@
                         SelectedIndexChanged="pckConversionsB_SelectedIndexChanged"
                         BackgroundColor="PaleGreen"/>
                 <Label x:Name="bOutputUnits" Text=""/>
-
             </StackLayout>
+            
             <!--Sugar Conversions-->
             <StackLayout Orientation="Horizontal" Margin="20">
                 <Entry x:Name="sugarInputValue"
@@ -62,8 +67,8 @@
                         SelectedIndexChanged="pckConversionsS_SelectedIndexChanged"
                         BackgroundColor="LightPink"/>
                 <Label x:Name="sOutputUnits" Text=""/>
-
             </StackLayout>
+            
             <!--Eggs-->
             <StackLayout Orientation="Horizontal" Margin="20">
 
@@ -76,15 +81,41 @@
                         SelectedIndexChanged="pckConversionsE_SelectedIndexChanged"
                         BackgroundColor="LemonChiffon"/>
                 <Label x:Name="eOutputUnits" Text=""/>
-
-
-
             </StackLayout>
-            <!--Trying to bind property here
+            
+            <!--Trying to bind property here-->
             <StackLayout>
-                <Label BindingContext="{x:Reference ovenConv}"
+               <Label BindingContext="{x:Reference ovenConv}"
                     x:Name="ovenConv" Text="{Binding Value, StringFormat=' Oven Temperature Conversion:' }"/>
-            </StackLayout>-->
+                     <Label Text="CONVERTED ITEMS" />
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Oven temperature: "/>
+                    <Label x:Name="lblOutputUnitsBind" Text="{Binding Path= OvenConv, Mode= OneTime}"/>
+                </StackLayout>
+             </StackLayout>
+            <StackLayout.Resources x:Name="cakeConvTemp">
+                
+            </StackLayout.Resources>
+           <!-- <StackLayout.Resources>
+                <DataTemplate x:Name="cakesConvertedTemplate" >
+                    <ViewCell>
+                        <StackLayout Margin="2">
+                            <StackLayout Orientation="Horizontal" >
+                                <Label Text="Converted Oven Temperature:" />
+                                <Label Text="{Binding Path=OvenConv}" />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" >
+                                <Label Text="Converted Flour Amount:" />
+                                <Label Text="{Binding Path=OvenConv}" />
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                    
+                </DataTemplate>
+                
+                
+                
+            </StackLayout.Resources>-->
 
             
             <StackLayout Orientation="Horizontal" Margin="20">

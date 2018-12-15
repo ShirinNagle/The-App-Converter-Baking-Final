@@ -18,8 +18,14 @@
             </Image>
             
         </Button>-->
-
-        <Image x:Name="imageMain" Source="icons8-cupcake-100.png" Margin="20"/>
+        <!--Making the cupcake image clickable-->
+        <Image x:Name="imageMain">
+            <!--="icons8-cupcake-100.png" Margin="20"-->
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"
+                                      NumberOfTapsRequired="1"/>
+            </Image.GestureRecognizers>
+            </Image>
 
     </StackLayout>
 
