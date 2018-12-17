@@ -2,54 +2,49 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppConverterBakingFinal.ConvertPage">
+
     <ContentPage.Content>
+    <ScrollView>
         <StackLayout>
-            
             <StackLayout>
             <Label Text="Convert items here!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
             </StackLayout>
             
-            <StackLayout Orientation="Horizontal" Margin="20">
-            <Entry x:Name="entryInputValue"
+            <!--Oven conversion entry-->
+            <StackLayout Orientation="Horizontal" Margin="5">
+                <Entry x:Name="entryInputValue"
                    TextChanged="entryInputValue_TextChanged"
                    Placeholder="Enter oven temperature to convert here"
-                   />
-                
-                <Label x:Name="lblInputUnits" Text=""
-                       />
-            
-            <Picker x:Name="pckConversions"
+                   Keyboard="Numeric"/>
+                <Label x:Name="lblInputUnits" Text=""/>
+                <Picker x:Name="pckConversions"
                     SelectedIndexChanged="pckConversions_SelectedIndexChanged"
-                    BackgroundColor="Aquamarine"
-                    TextColor="Navy"
-                    />
-                <Label x:Name="lblOutputUnits" Text="{Binding Path=OvenConv, Mode=OneTime}"/>
+                    BackgroundColor="Aquamarine"/>
+                <Label x:Name="lblOutputUnits" Text=""/>
             </StackLayout>
             
             <!--Flour conversion -->
-                <StackLayout Orientation="Horizontal" Margin="20">
+                <StackLayout Orientation="Horizontal" Margin="5">
                 <Entry x:Name="flourInputValue"
                        TextChanged="flourInputValue_TextChanged"
-                       Placeholder="Enter flour quantity to convert here"/>
-                
-                <Label x:Name="fInputUnits" Text=""/>
-                
+                       Placeholder="Enter flour quantity to convert here"
+                       Keyboard="Numeric"/>
+                 <Label x:Name="fInputUnits" Text=""/>
                 <Picker x:Name="pckConversionsF"
                         SelectedIndexChanged="pckConversionsF_SelectedIndexChanged"
                         BackgroundColor="PaleTurquoise"/>
-                
-                <Label x:Name="fOutputUnits" Text=""/>
+                <Label x:Name="fOutputUnits" Text="" />
                 </StackLayout>
             
             <!--Butter Conversions-->
-            <StackLayout Orientation="Horizontal" Margin="20">
+            <StackLayout Orientation="Horizontal" Margin="5">
                 <Entry x:Name="butterInputValue"
                        TextChanged="butterInputValue_TextChanged"
-                       Placeholder="Enter butter quantity to convert here"/>
+                       Placeholder="Enter butter quantity to convert here"
+                       Keyboard="Numeric"/>
                 <Label x:Name="bInputUnits" Text=""/>
-
                 <Picker x:Name="pckConversionsB"
                         SelectedIndexChanged="pckConversionsB_SelectedIndexChanged"
                         BackgroundColor="PaleGreen"/>
@@ -57,12 +52,12 @@
             </StackLayout>
             
             <!--Sugar Conversions-->
-            <StackLayout Orientation="Horizontal" Margin="20">
+            <StackLayout Orientation="Horizontal" Margin="5">
                 <Entry x:Name="sugarInputValue"
                        TextChanged="sugarInputValue_TextChanged"
-                       Placeholder="Enter caster sugar amount here"/>
+                       Placeholder="Enter caster sugar amount here"
+                       Keyboard="Numeric"/>
                 <Label x:Name="sInputUnits" Text=""/>
-
                 <Picker x:Name="pckConversionsS"
                         SelectedIndexChanged="pckConversionsS_SelectedIndexChanged"
                         BackgroundColor="LightPink"/>
@@ -70,65 +65,127 @@
             </StackLayout>
             
             <!--Eggs-->
-            <StackLayout Orientation="Horizontal" Margin="20">
-
+            <StackLayout Orientation="Horizontal" Margin="5">
                 <Entry x:Name="eggInputValue"
                        TextChanged="eggInputValue_TextChanged"
-                       Placeholder="Enter amount of eggs here"/>
+                       Placeholder="Enter amount of eggs here"
+                       Keyboard="Numeric"/>
                 <Label x:Name ="eInputUnits" Text=""/>
-
                 <Picker x:Name="pckConversionsE"
                         SelectedIndexChanged="pckConversionsE_SelectedIndexChanged"
                         BackgroundColor="LemonChiffon"/>
                 <Label x:Name="eOutputUnits" Text=""/>
             </StackLayout>
             
-            <!--Trying to bind property here-->
-            <StackLayout>
-               <Label BindingContext="{x:Reference ovenConv}"
-                    x:Name="ovenConv" Text="{Binding Value, StringFormat=' Oven Temperature Conversion:' }"/>
-                     <Label Text="CONVERTED ITEMS" />
-                <StackLayout Orientation="Horizontal">
+            <!--Bind property displays here for oven conv, flour conv etc-->
+        <StackLayout>
+                
+                <Label x:Name="ovenConv" Text="{Binding Value, StringFormat=' Oven Temperature Conversion:' }"/>
+                     <Label Text="CONVERTED ITEMS"  HorizontalOptions="Center"/>
+                
+                <StackLayout Orientation="Horizontal" Padding="5">
                     <Label Text="Oven temperature: "/>
-                    <Label x:Name="lblOutputUnitsBind" Text="{Binding Path= OvenConv, Mode= OneTime}"/>
+                    <Label x:Name="lblOutputUnitsBind" Text="{Binding Source={x:Reference lblOutputUnits}, Path=Text}"/>
                 </StackLayout>
-             </StackLayout>
-            <StackLayout.Resources x:Name="cakeConvTemp">
                 
-            </StackLayout.Resources>
-           <!-- <StackLayout.Resources>
-                <DataTemplate x:Name="cakesConvertedTemplate" >
-                    <ViewCell>
-                        <StackLayout Margin="2">
-                            <StackLayout Orientation="Horizontal" >
-                                <Label Text="Converted Oven Temperature:" />
-                                <Label Text="{Binding Path=OvenConv}" />
-                            </StackLayout>
-                            <StackLayout Orientation="Horizontal" >
-                                <Label Text="Converted Flour Amount:" />
-                                <Label Text="{Binding Path=OvenConv}" />
-                            </StackLayout>
-                        </StackLayout>
-                    </ViewCell>
-                    
-                </DataTemplate>
+                <StackLayout Orientation="Horizontal" Padding="5">
+                    <Label Text="Flour amount: "/>
+                    <Label x:Name="flourDisplay"   Text="{Binding Source={x:Reference fOutputUnits}, Path=Text}"/>
+                </StackLayout>
                 
+                <StackLayout Orientation="Horizontal" Padding="5">
+                    <Label Text="Sugar amount: "/>
+                    <Label x:Name="SugarDisplay"   Text="{Binding Source={x:Reference sOutputUnits}, Path=Text}"/>
+                </StackLayout>
                 
+                <StackLayout Orientation="Horizontal" Padding="5">
+                    <Label Text="Butter amount: "/>
+                    <Label x:Name="butterDisplay"   Text="{Binding Source={x:Reference bOutputUnits}, Path=Text}"/>
+                </StackLayout>
                 
-            </StackLayout.Resources>-->
+                <StackLayout Orientation="Horizontal" Padding="5">
+                <Label Text="Amount of eggs: "/>
+                    <Label x:Name="eggsDisplay"   Text="{Binding Source={x:Reference eOutputUnits}, Path=Text}"/>
+            </StackLayout>
+        </StackLayout>
+            <!--
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
 
-            
-            <StackLayout Orientation="Horizontal" Margin="20">
-            <Button x:Name="btnMainPage"
+                    <ListView x:Name="lvCakes"
+               Grid.Row="0" Grid.Column="0"
+                ItemSelected="LvCakes_ItemSelected"
+                 ItemTemplate="{StaticResource cakesConvertedTemplate}"/>
+              
+                <StackLayout x:Name="slOneCake" Orientation="Horizontal" 
+                     WidthRequest="500" HeightRequest="300"
+                     HorizontalOptions="Center" VerticalOptions="Center" 
+                     Grid.Column="1" Grid.Row="0" BackgroundColor="Pink"
+                     Margin="5, 2, 5, 2" IsVisible="True">
+                    <StackLayout x:Name="slNonEdits" Margin="3">
+                        <Frame BackgroundColor="Blue" WidthRequest="75" 
+                                   HeightRequest="75" Margin="4, 2, 4, 2"/>
+                        <StackLayout Orientation="Horizontal" Margin="4, 2, 4, 2" >
+                            <Label Text="Oven Temp: " HorizontalOptions="Start"  />
+                            <Label x:Name="lblOven" Text="{Binding Oven}" HorizontalOptions="End"  />
+                        </StackLayout>
+                        <Button x:Name="btnUpdate" Text="Update Data" IsEnabled="False" 
+                        HorizontalOptions="Center" Clicked="btnUpdate_Clicked" />
+                    </StackLayout>
+                    <StackLayout x:Name="slEditable" Margin="3" >
+                        <StackLayout Orientation="Horizontal" Margin="4, 2, 4, 2">
+                            <Label Text="Flour Conv: " HorizontalOptions="Start"  />
+                            <Entry x:Name="lblFlour" Text="{Binding Flour}"
+                           Placeholder="Value Goes Here" HorizontalOptions="End"
+                           TextChanged="OneDogEntry_TextChanged" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Margin="4, 2, 4, 2">
+                            <Label Text="Category: " />
+                            <Entry x:Name="lblCategory" Text="{Binding Category}" 
+                           Placeholder="Value Goes Here" HorizontalOptions="End"
+                           TextChanged="OneDogEntry_TextChanged" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Margin="4, 2, 4, 2">
+                            <Label Text="Exercise: " />
+                            <Entry x:Name="lblExercise" Text="{Binding Exercise}" 
+                           Placeholder="Value Goes Here" HorizontalOptions="End"
+                           TextChanged="OneDogEntry_TextChanged" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Margin="4, 2, 4, 2"
+                             >
+                            <Label Text="Grooming: " />
+                            <Entry x:Name="lblGrooming" Text="{Binding Grooming}" 
+                           Placeholder="Value Goes Here" HorizontalOptions="End"
+                           TextChanged="OneDogEntry_TextChanged" />
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+-->
+
+
+
+                <StackLayout Orientation="Horizontal" Margin="5">
+                <Button x:Name="btnMainPage"
                     Text="Go to main page"
-                    Margin="20"
-                    Clicked="btnMainPage_Clicked"/>
+                    Margin="0,0,0,20"
+                    Clicked="btnMainPage_Clicked"
+                    HorizontalOptions="CenterAndExpand"/>
                 <Button x:Name="btnScaleUpOrDown"
                     Text="Go to Scale up or down page"
-                    Margin="20"
-                    Clicked="btnScaleUpOrDown_Clicked"/>
+                    Margin="0,0,0,20"
+                    Clicked="btnScaleUpOrDown_Clicked"
+                     HorizontalOptions="CenterAndExpand"/>
             </StackLayout>
+            
                 
         </StackLayout>
+      </ScrollView>
     </ContentPage.Content>
 </ContentPage>

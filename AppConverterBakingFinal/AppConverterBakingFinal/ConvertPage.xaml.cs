@@ -1,19 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Newtonsoft.Json;
+using System.Reflection;
 
 namespace AppConverterBakingFinal
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ConvertPage : ContentPage
 	{
-        //global list to store the cake conversions
-        List<Cakes> cakes;
+        
         myConversionsClass myConverter;//Global level object
        //instantiate objects from classes
         dataBindingClass dataBound = new dataBindingClass();
@@ -25,10 +27,12 @@ namespace AppConverterBakingFinal
             CreateListOfConversions();
             //for data binding converted amt to display elsewhere on the page
             this.BindingContext = dataBound;
+            
+                  
 		}
 
-        
-        private void InitialiseProper()
+            
+         private void InitialiseProper()
         {
             // instantiate a new myConversionsClass object
             if(myConverter == null)
@@ -71,7 +75,7 @@ namespace AppConverterBakingFinal
             answer = myConverter.convert(Convert.ToDouble(entryInputValue.Text), pckConversions.SelectedIndex);
             //display the answer
             lblOutputUnits.Text = "is " + answer.ToString("0.00") + " " + myConverter.OutputUnits;
-            lblInputUnits.Text = myConverter.InputUnits;
+            //lblInputUnits.Text = myConverter.InputUnits;
             
             
         }
@@ -79,7 +83,12 @@ namespace AppConverterBakingFinal
         private void entryInputValue_TextChanged(object sender, TextChangedEventArgs e)
         {
             DoConversions();
+            /*bool isEntryInputEmpty;
+            isEntryInputEmpty = String.IsNullOrEmpty(entryInputValue.Text);
+            DoConversions();*/
         }
+
+        //Flour conversions
 
         private void flourInputValue_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -98,9 +107,11 @@ namespace AppConverterBakingFinal
             //display the answer
                     
             fOutputUnits.Text = "is " + answer.ToString("0.00") + " " + myConverter.OutputUnitsF;
-            fInputUnits.Text = myConverter.InputUnitsF;
+            //fInputUnits.Text = myConverter.InputUnitsF;
         }//Do ConversionsF
 
+
+        //Butter conversions
         private void butterInputValue_TextChanged(object sender, TextChangedEventArgs e)
         {
             DoConversionsB();
@@ -118,7 +129,7 @@ namespace AppConverterBakingFinal
             answer = myConverter.convertB(Convert.ToDouble(butterInputValue.Text), pckConversionsB.SelectedIndex);
             //display the answer
             bOutputUnits.Text = "is " + answer.ToString("0.00") + " " + myConverter.OutputUnitsB;
-            bInputUnits.Text = myConverter.InputUnitsB;
+           // bInputUnits.Text = myConverter.InputUnitsB;
         }
 
         private void sugarInputValue_TextChanged(object sender, TextChangedEventArgs e)
@@ -133,7 +144,7 @@ namespace AppConverterBakingFinal
             answer = myConverter.convertS(Convert.ToDouble(sugarInputValue.Text), pckConversionsS.SelectedIndex);
             //display the answer
             sOutputUnits.Text = "is " + answer.ToString("0.00") + " " + myConverter.OutputUnitsS;
-            sInputUnits.Text = myConverter.InputUnitsS;
+            //sInputUnits.Text = myConverter.InputUnitsS;
 
         }
 
@@ -153,13 +164,18 @@ namespace AppConverterBakingFinal
         {
             double answer;
             answer = myConverter.convertE(Convert.ToDouble(eggInputValue.Text), pckConversionsE.SelectedIndex);
-            eOutputUnits.Text = "is " + answer.ToString("0.00") + " " + myConverter.OutputUnitsE;
+            eOutputUnits.Text = "is " + answer.ToString("0.00") + " " + myConverter.OutputUnitsE + " eggs";
             //selection for egg weights
 
         }
         private void pckConversionsE_SelectedIndexChanged(object sender, EventArgs e)
         {
             DoConversionsE();
+        }
+
+        private void LvCakes_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+
         }
     }
 

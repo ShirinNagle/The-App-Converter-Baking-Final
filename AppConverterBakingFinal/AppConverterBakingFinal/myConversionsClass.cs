@@ -20,8 +20,13 @@ namespace AppConverterBakingFinal
         public string[] ConversionTypes = { "Celcius - Fahrenheit",
                                             "Fahrenheit - Celcius"};
         public string[] ConversionTypesF = {"Cups - Grams",
-                                                "Grams - Cups"};
+                                             "Grams - Cups",
+                                             "Cups - Oz's",
+                                              "Oz's - Cups",
+                                               "Grams - Oz's",
+                                               "Oz's - Grams"};
         public string[] ConversionTypesB = {"Cups - Grams",
+                                               "Grams - Cups",
                                                 "Cups - Oz's",
                                                "Sticks - Cups"};
         public string[] ConversionTypesS = {"Cups - Grams",
@@ -72,6 +77,26 @@ namespace AppConverterBakingFinal
                     InputUnitsF = "Grams";
                     OutputUnitsF = "Cups";
                     break;
+                case 2:
+                    answer = (inputV * 4.5);
+                    InputUnitsF = "Cups";
+                    OutputUnitsF = "Oz's";
+                    break;
+                case 3:
+                    answer = (inputV / 4.5);
+                    InputUnitsF = "Oz's";
+                    OutputUnitsF = "Cups";
+                    break;
+                case 4:
+                    answer = (inputV / 28.35);
+                    InputUnitsF = "Grams";
+                    OutputUnitsF = "Oz's";
+                    break;
+                case 5:
+                    answer = (inputV * 28.35);
+                    InputUnitsF = "Oz's";
+                    OutputUnitsF = "Grams";
+                    break;
             }
             return answer;
         }//ConvertF
@@ -114,12 +139,18 @@ namespace AppConverterBakingFinal
                     InputUnitsS = "Cups";
                     OutputUnitsS = "Grams";
                     break;
-                case 1:
+                case 1://Cups - Grams
+                    answer = (inputV * 227);
+                    InputUnitsS = "Cups";
+                    OutputUnitsS = "Grams";
+                    break;
+
+                case 2:
                     answer = (inputV / 227);
                     InputUnitsS = "Grams";
                     OutputUnitsS = "Cups";
                     break;
-                case 2:
+                case 3:
                     answer = (inputV * 8);
                     InputUnitsS = "Cups";
                     OutputUnitsS = "Oz'zs";

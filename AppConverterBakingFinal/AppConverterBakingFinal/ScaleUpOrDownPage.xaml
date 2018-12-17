@@ -1,12 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppConverterBakingFinal.ScaleUpOrDownPage">
-    <ContentPage.Content>
+              x:Class="AppConverterBakingFinal.ScaleUpOrDownPage">
+             <!--xmlns:local="clr-namespace:AppConverterBakingFinal"-->
+            
+            
+           <!-- <ContentPage.Resources>
+                <DataTemplate x:Key="cakesConvertedTemplate" >
+                    <ViewCell>
+                        <StackLayout Margin="2">
+                            <StackLayout Orientation="Horizontal" >
+                                <Label Text="Converted Oven Temperature:" />
+                                <Label Text="{Binding Path=OvenConv}" />
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal" >
+                                <Label Text="Converted Flour Amount:" />
+                                <Label Text="{Binding Path=OvenConv}" />
+                            </StackLayout>
+                    <StackLayout Orientation="Horizontal" >
+                        <Label Text="Converted Butter Amount:" />
+                        <Label Text="{Binding Path=OvenConv}" />
+                    </StackLayout>
+                </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+           </ContentPage.Resources>-->
+    <ContentPage.Content>  
         <StackLayout>
-            <Label Text="Scale up or down here"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+            
+
             <Button x:Name="btnMainPage" Text="Go to Welcome"
             Margin="10, 5, 10, 0"
                 Clicked="btnMainPage_Clicked"/>
