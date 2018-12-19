@@ -4,6 +4,7 @@
              x:Class="AppConverterBakingFinal.ConvertPage">
 
     <ContentPage.Content>
+        <!--Using scroll view for viewing the whole page -->
     <ScrollView>
         <StackLayout>
             <StackLayout>
@@ -64,7 +65,7 @@
                 <Label x:Name="sOutputUnits" Text=""/>
             </StackLayout>
             
-            <!--Eggs-->
+            <!--Eggs conversions-->
             <StackLayout Orientation="Horizontal" Margin="5">
                 <Entry x:Name="eggInputValue"
                        TextChanged="eggInputValue_TextChanged"
@@ -78,100 +79,38 @@
             </StackLayout>
             
             <!--Bind property displays here for oven conv, flour conv etc-->
-        <StackLayout>
-                
-                <Label x:Name="ovenConv" Text="{Binding Value, StringFormat=' Oven Temperature Conversion:' }"/>
-                     <Label Text="CONVERTED ITEMS"  HorizontalOptions="Center"/>
-                
-                <StackLayout Orientation="Horizontal" Padding="5">
-                    <Label Text="Oven temperature: "/>
-                    <Label x:Name="lblOutputUnitsBind" Text="{Binding Source={x:Reference lblOutputUnits}, Path=Text}"/>
-                </StackLayout>
-                
-                <StackLayout Orientation="Horizontal" Padding="5">
-                    <Label Text="Flour amount: "/>
-                    <Label x:Name="flourDisplay"   Text="{Binding Source={x:Reference fOutputUnits}, Path=Text}"/>
-                </StackLayout>
-                
-                <StackLayout Orientation="Horizontal" Padding="5">
-                    <Label Text="Sugar amount: "/>
-                    <Label x:Name="SugarDisplay"   Text="{Binding Source={x:Reference sOutputUnits}, Path=Text}"/>
-                </StackLayout>
-                
-                <StackLayout Orientation="Horizontal" Padding="5">
-                    <Label Text="Butter amount: "/>
-                    <Label x:Name="butterDisplay"   Text="{Binding Source={x:Reference bOutputUnits}, Path=Text}"/>
-                </StackLayout>
-                
-                <StackLayout Orientation="Horizontal" Padding="5">
-                <Label Text="Amount of eggs: "/>
-                    <Label x:Name="eggsDisplay"   Text="{Binding Source={x:Reference eOutputUnits}, Path=Text}"/>
-            </StackLayout>
-        </StackLayout>
-            <!--
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="3*" />
-                    </Grid.ColumnDefinitions>
+                <StackLayout>
 
-                    <ListView x:Name="lvCakes"
-               Grid.Row="0" Grid.Column="0"
-                ItemSelected="LvCakes_ItemSelected"
-                 ItemTemplate="{StaticResource cakesConvertedTemplate}"/>
-              
-                <StackLayout x:Name="slOneCake" Orientation="Horizontal" 
-                     WidthRequest="500" HeightRequest="300"
-                     HorizontalOptions="Center" VerticalOptions="Center" 
-                     Grid.Column="1" Grid.Row="0" BackgroundColor="Pink"
-                     Margin="5, 2, 5, 2" IsVisible="True">
-                    <StackLayout x:Name="slNonEdits" Margin="3">
-                        <Frame BackgroundColor="Blue" WidthRequest="75" 
-                                   HeightRequest="75" Margin="4, 2, 4, 2"/>
-                        <StackLayout Orientation="Horizontal" Margin="4, 2, 4, 2" >
-                            <Label Text="Oven Temp: " HorizontalOptions="Start"  />
-                            <Label x:Name="lblOven" Text="{Binding Oven}" HorizontalOptions="End"  />
-                        </StackLayout>
-                        <Button x:Name="btnUpdate" Text="Update Data" IsEnabled="False" 
-                        HorizontalOptions="Center" Clicked="btnUpdate_Clicked" />
+                    <Label x:Name="ovenConv" Text="{Binding Value, StringFormat=' Oven Temperature Conversion:' }"/>
+                    <Label Text="CONVERTED ITEMS"  HorizontalOptions="Center"/>
+
+                    <StackLayout Orientation="Horizontal" Padding="5">
+                        <Label Text="Oven temperature: "/>
+                        <Label x:Name="lblOutputUnitsBind" Text="{Binding Source={x:Reference lblOutputUnits}, Path=Text}"/>
                     </StackLayout>
-                    <StackLayout x:Name="slEditable" Margin="3" >
-                        <StackLayout Orientation="Horizontal" Margin="4, 2, 4, 2">
-                            <Label Text="Flour Conv: " HorizontalOptions="Start"  />
-                            <Entry x:Name="lblFlour" Text="{Binding Flour}"
-                           Placeholder="Value Goes Here" HorizontalOptions="End"
-                           TextChanged="OneDogEntry_TextChanged" />
-                        </StackLayout>
-                        <StackLayout Orientation="Horizontal" Margin="4, 2, 4, 2">
-                            <Label Text="Category: " />
-                            <Entry x:Name="lblCategory" Text="{Binding Category}" 
-                           Placeholder="Value Goes Here" HorizontalOptions="End"
-                           TextChanged="OneDogEntry_TextChanged" />
-                        </StackLayout>
-                        <StackLayout Orientation="Horizontal" Margin="4, 2, 4, 2">
-                            <Label Text="Exercise: " />
-                            <Entry x:Name="lblExercise" Text="{Binding Exercise}" 
-                           Placeholder="Value Goes Here" HorizontalOptions="End"
-                           TextChanged="OneDogEntry_TextChanged" />
-                        </StackLayout>
-                        <StackLayout Orientation="Horizontal" Margin="4, 2, 4, 2"
-                             >
-                            <Label Text="Grooming: " />
-                            <Entry x:Name="lblGrooming" Text="{Binding Grooming}" 
-                           Placeholder="Value Goes Here" HorizontalOptions="End"
-                           TextChanged="OneDogEntry_TextChanged" />
-                        </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Padding="5">
+                        <Label Text="Flour amount: "/>
+                        <Label x:Name="flourDisplay"   Text="{Binding Source={x:Reference fOutputUnits}, Path=Text}"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Padding="5">
+                        <Label Text="Sugar amount: "/>
+                        <Label x:Name="SugarDisplay"   Text="{Binding Source={x:Reference sOutputUnits}, Path=Text}"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Padding="5">
+                        <Label Text="Butter amount: "/>
+                        <Label x:Name="butterDisplay"   Text="{Binding Source={x:Reference bOutputUnits}, Path=Text}"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Padding="5">
+                        <Label Text="Amount of eggs: "/>
+                        <Label x:Name="eggsDisplay"   Text="{Binding Source={x:Reference eOutputUnits}, Path=Text}"/>
                     </StackLayout>
                 </StackLayout>
--->
-
-
-
                 <StackLayout Orientation="Horizontal" Margin="5">
+                    <!--Buttons to navigate to other pages -->
                 <Button x:Name="btnMainPage"
                     Text="Go to main page"
                     Margin="0,0,0,20"

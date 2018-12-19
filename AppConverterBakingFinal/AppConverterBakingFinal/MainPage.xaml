@@ -5,16 +5,27 @@
              x:Class="AppConverterBakingFinal.MainPage">
 
     <StackLayout>
-         
-        <Label  LineBreakMode="WordWrap"
+        <StackLayout>
+            <!--First page of app includes a welcome, some basic info a navigation button and an icon with a tap gesture recogniser-->
+            <Label FontSize="Large"
+                   FontAttributes="Bold"
+                   Text="It's all about the cake!!"
+                   HorizontalOptions="Center"
+                   Margin="40"/>
+
+
+        </StackLayout>
+
+        <StackLayout>
+            <Label  LineBreakMode="WordWrap"
             Margin="30"
         Text="Welcome to Baking converter app. This app will help you to easily convert from American recipes which primarily use cup measurements and imperial measurements. You will also be able to convert recipes using metric measurements into cup and imperial measurements. If your recipe lists large eggs, but you only have medium, that's no problem, this app converts from large eggs to medium eggs and vice versa. Click on the cupcake to go to conversions" 
            HorizontalOptions="CenterAndExpand"
            VerticalOptions="CenterAndExpand" />
-        <Button x:Name="btnConvert" Text="Go to Conversion"
+            <Button x:Name="btnConvert" Text="Go to Conversion"
             Margin="40"        
                 Clicked="btnConvert_Clicked"/>
-        
+        </StackLayout>
 
 
         <!--Making the cupcake image clickable-->

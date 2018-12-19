@@ -3,26 +3,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppConverterBakingFinal.App">
     <Application.Resources>
-       <!-- <Color x:Key="blueColor">#1E90FF</Color>
-        <Color x:Key="whiteColor">#FFFFFF</Color>
-
-        <Style x:Key="normalButton" TargetType="Button" >
-            <Setter Property="BackgroundColor" 
-                    Value="{StaticResource blueColor}" />
-            <Setter Property="TextColor" 
-                    Value="{StaticResource whiteColor}" />
-        </Style>-->
+       
         <ResourceDictionary>
+            <!--Button Styling-->
             <Style TargetType="Button">
-                <Setter Property="BorderRadius" Value="20"/>
-                <Setter Property="BackgroundColor" Value="GreenYellow"/>
+                <Setter Property="BorderRadius" Value="5"/>
+                <Setter Property="BackgroundColor" Value="MediumAquamarine"/>
                 <Setter Property="TextColor" Value="Gray"/>
                 <Setter Property="WidthRequest" Value="175"/>
             </Style>
+            <!--Entry Styling-->
+            <Style TargetType="Entry">
+                <Setter Property="TextColor" Value="Gray"/>
+            </Style>
+            <!--Picker Styling-->
+            <Style TargetType="Picker">
+                <Setter Property="TextColor" Value="Gray"/>
+                
+            </Style>
             
             <Style TargetType="StackLayout">
-                <Setter Property="BackgroundColor" Value="LightGray"/>
+                <Setter Property="BackgroundColor" Value="LightCyan"/>
             </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="Gray"/>
+            </Style>
+            
             
         </ResourceDictionary>
 

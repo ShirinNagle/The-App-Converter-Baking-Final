@@ -12,9 +12,9 @@ namespace AppConverterBakingFinal
         public MainPage()
         {
             InitializeComponent();
+            //image set up method
             SetUpImageOnPage();
-            
-           // imageMain.Source = ImageSource.FromResource("AppConverterBakingFinal.icons8-cupcake-100.png", assembly);
+                  
         }
 
         private void SetUpImageOnPage()
@@ -25,12 +25,12 @@ namespace AppConverterBakingFinal
             string strFileName = "AppConverterBakingFinal.Images.icons8cupcake100.png";
             imageMain.Source = ImageSource.FromResource(strFileName, assembly);
         }
-
+        //Go to convertPage button 
         private void btnConvert_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new ConvertPage());
         }
-
+        //clickable icon which goes to convertPage
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
             //go to convert page
