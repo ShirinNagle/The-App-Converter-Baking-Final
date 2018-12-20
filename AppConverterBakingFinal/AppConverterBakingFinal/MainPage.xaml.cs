@@ -22,7 +22,7 @@ namespace AppConverterBakingFinal
             //get the assembly
             var assembly = typeof(MainPage);
             //Directory path - 2 paramaters are that dir path in that assembly
-            string strFileName = "AppConverterBakingFinal.Images.icons8cupcake100.png";
+            string strFileName = "AppConverterBakingFinal.Images.cupcake.png";
             imageMain.Source = ImageSource.FromResource(strFileName, assembly);
         }
         //Go to convertPage button 

@@ -12,10 +12,12 @@
   <ItemGroup>
     <None Remove="icons8-cupcake-100.png" />
     <None Remove="Images\conv.png" />
+    <None Remove="Images\cupcake.png" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Images\conv.png" />
+    <EmbeddedResource Include="Images\cupcake.png" />
   </ItemGroup>
 
   <ItemGroup>
