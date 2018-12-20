@@ -15,12 +15,11 @@
             
             <!--Oven conversion entry-->
             <StackLayout Orientation="Horizontal" Margin="5">
-                <Entry x:Name="entryInputValue"
+                    <Entry x:Name="entryInputValue"
                    TextChanged="entryInputValue_TextChanged"
                    Placeholder="Enter oven temperature to convert here"
                    Keyboard="Numeric"/>
-                <Label x:Name="lblInputUnits" Text=""/>
-                <Picker x:Name="pckConversions"
+                    <Picker x:Name="pckConversions"
                     SelectedIndexChanged="pckConversions_SelectedIndexChanged"
                     BackgroundColor="Aquamarine"/>
                 <Label x:Name="lblOutputUnits" Text=""/>
@@ -28,12 +27,11 @@
             
             <!--Flour conversion -->
                 <StackLayout Orientation="Horizontal" Margin="5">
-                <Entry x:Name="flourInputValue"
+                    <Entry x:Name="flourInputValue"
                        TextChanged="flourInputValue_TextChanged"
                        Placeholder="Enter flour quantity to convert here"
                        Keyboard="Numeric"/>
-                 <Label x:Name="fInputUnits" Text=""/>
-                <Picker x:Name="pckConversionsF"
+                    <Picker x:Name="pckConversionsF"
                         SelectedIndexChanged="pckConversionsF_SelectedIndexChanged"
                         BackgroundColor="PaleTurquoise"/>
                 <Label x:Name="fOutputUnits" Text="" />
@@ -41,12 +39,11 @@
             
             <!--Butter Conversions-->
             <StackLayout Orientation="Horizontal" Margin="5">
-                <Entry x:Name="butterInputValue"
+                    <Entry x:Name="butterInputValue"
                        TextChanged="butterInputValue_TextChanged"
                        Placeholder="Enter butter quantity to convert here"
                        Keyboard="Numeric"/>
-                <Label x:Name="bInputUnits" Text=""/>
-                <Picker x:Name="pckConversionsB"
+                    <Picker x:Name="pckConversionsB"
                         SelectedIndexChanged="pckConversionsB_SelectedIndexChanged"
                         BackgroundColor="PaleGreen"/>
                 <Label x:Name="bOutputUnits" Text=""/>
@@ -54,12 +51,11 @@
             
             <!--Sugar Conversions-->
             <StackLayout Orientation="Horizontal" Margin="5">
-                <Entry x:Name="sugarInputValue"
+                    <Entry x:Name="sugarInputValue"
                        TextChanged="sugarInputValue_TextChanged"
                        Placeholder="Enter caster sugar amount here"
                        Keyboard="Numeric"/>
-                <Label x:Name="sInputUnits" Text=""/>
-                <Picker x:Name="pckConversionsS"
+                    <Picker x:Name="pckConversionsS"
                         SelectedIndexChanged="pckConversionsS_SelectedIndexChanged"
                         BackgroundColor="LightPink"/>
                 <Label x:Name="sOutputUnits" Text=""/>
@@ -67,12 +63,11 @@
             
             <!--Eggs conversions-->
             <StackLayout Orientation="Horizontal" Margin="5">
-                <Entry x:Name="eggInputValue"
+                    <Entry x:Name="eggInputValue"
                        TextChanged="eggInputValue_TextChanged"
                        Placeholder="Enter amount of eggs here"
                        Keyboard="Numeric"/>
-                <Label x:Name ="eInputUnits" Text=""/>
-                <Picker x:Name="pckConversionsE"
+                    <Picker x:Name="pckConversionsE"
                         SelectedIndexChanged="pckConversionsE_SelectedIndexChanged"
                         BackgroundColor="LemonChiffon"/>
                 <Label x:Name="eOutputUnits" Text=""/>

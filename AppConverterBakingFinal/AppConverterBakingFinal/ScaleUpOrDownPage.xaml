@@ -7,13 +7,13 @@
         <StackLayout>
             <Label Margin="20,20,0,0"
                LineBreakMode="WordWrap"
-               Text="This conversion table assumes that your recipe is for an 8 inch tin(20 cm) as this is the most common tin size in recipes."/>
+               Text="This conversion table assumes that the recipe you have is for an 8 inch tin(20 cm) as this is the most common tin size in recipes."/>
             <Label Margin="20,20,0,0"
             LineBreakMode="WordWrap"
-               Text="Locate your tin size, multiply if you are using a larger tin size, or divide if using a smaller tin size"/>
+               Text="Locate your tin size, multiply if you are using a larger tin size, or divide if using a smaller tin size."/>
             <Label Margin="20,20,0,0"
             LineBreakMode="WordWrap"
-               Text="Pay attention to the depth of the tin size in the original recipe. It's an important factor"/>
+               Text="Pay attention to the depth of the tin size in the original recipe. It's an important factor!"/>
             <StackLayout HorizontalOptions="Center" Margin="40, 40, 0, 20">
                 <Image x:Name="imageScale" 
                        Aspect="AspectFit"

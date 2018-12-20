@@ -39,13 +39,17 @@
 
 
         <!--Making the cupcake image clickable-->
-        <Image x:Name="imageMain" Margin="0,0,0,20" >
-             <Image.GestureRecognizers>
-                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"
+        
+            <Image x:Name="imageMain" Margin="0,0,0,20" >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"
                                       NumberOfTapsRequired="1"/>
-            </Image.GestureRecognizers>
-         </Image>
+                </Image.GestureRecognizers>
+            </Image>
 
+            
+
+        
     </StackLayout>
 
 </ContentPage>
